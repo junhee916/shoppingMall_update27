@@ -11,7 +11,8 @@ const productRouter = require('./router/product')
 
 app.use('/uploads', express.static('uploads'))
 
-require('./config/database')
+const connectDB = require('./config/database')
+connectDB()
 
 // middleware
 app.use(bodyParser.json())
